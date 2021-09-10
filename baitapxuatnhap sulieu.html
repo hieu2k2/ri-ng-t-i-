@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>đăng kí thành viên mới</h1>
+    <from action="">
+        <table>
+            <tr>
+                <td>
+                    <label for="ho">ho</label>
+                </td>
+                <td>
+                    <input type="text" id="ho" name="ho">
+                </td>
+                <p id="Ho1"></p>
+            </tr>
+            <tr>
+                <td>
+                    <label for="ten">ten</label>
+                </td>
+                <td>
+                    <input type="text" id="ten" name="ten">
+                </td>
+                <p id="Ten1"></p>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">email</label>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email">
+                </td>
+                <p id="email1"></p>
+            </tr>
+            <tr>
+                <td>
+                    <label for="matkhau">matkhau</label>
+                </td>
+                <td>
+                    <input type="password" id="matkhau" name="matkhau">
+                </td>
+                <p id="Password1"></p>
+            </tr>
+            <tr>>
+                <label>Ngày sinh</label>
+                <select name="" id="Ngay">
+                    <option>1</option>
+                    <option>2</option>
+                </select>
+                <select name="" id="Thang">
+                    <option>1</option>
+                    <option>2</option>
+                </select>
+                <select name="" id="Nam" >
+                    <option>2001</option>
+                    <option>2002</option>
+                </select>
+            </tr>
+            <tr>
+                <td>
+                    <label>gioi tinh</label>
+                </td>
+                <td>
+                    <label>gioi tinh</label>
+                </td>
+            </tr>
+            <input type="button" id="DangKy" value="Đăng ký" ">
+        </table>
+    </from>
+
+    <script>
+        document.getElementById('DangKy').addEventListener('click', function () {
+            let ho = document.getElementById('ho').value;
+            let ten = document.getElementById('ten').value;
+            let email = document.getElementById('email').value;
+            let pass = document.getElementById('matkhau').value;
+            let ngay = document.getElementById('Ngay').value;
+            let thang = document.getElementById('Thang').value;
+            let nam = document.getElementById('Nam').value;
+            let c = document.getElementById('NamG').checked;
+            let d = ho != '' && ten != '' && email != '' && pass != '';
+            if (ho == '') {
+                document.getElementById('Ho1').innerText = 'Vui lòng nhập Họ';
+                document.getElementById('Ho1').style.color = 'red';
+            }
+            else {
+                document.getElementById('Ho1').innerText = '';
+            }
+            if (ten == '') {
+                document.getElementById('Ten1').innerText = 'Vui lòng nhập Tên';
+                document.getElementById('Ten1').style.color = 'red';
+            }
+            else {
+                document.getElementById('Ten1').innerText = '';
+            }
+            if (email == '') {
+                document.getElementById('email1').innerText = 'Vui lòng nhập Email';
+                document.getElementById('email1').style.color = 'red';
+            }
+            else {
+                document.getElementById('email1').innerText = '';
+            }
+            if (pass == '') {
+                document.getElementById('Password1').innerText = 'Vui lòng nhập Mật Khẩu';
+                document.getElementById('Password1').style.color = 'red';
+            }
+            else {
+                document.getElementById('Password1').innerText = '';
+            }
+            if (d) {
+                if (c) {
+                    var text = 'Chào mừng anh '
+                }
+                else {
+                    var text = 'Chào mừng chị '
+                }
+                let a = text + ho + ' ' + ten + ' đã dăng ký thành công!' + "<br>" + 'Họ và tên: ' + ho + ' ' + ten + "<br>";
+                a += "Email: " + email + '<br>';
+                a += "Ngày sinh: " + ngay + '/' + thang + '/' + nam;
+                document.write(a);
+            }
+        })
+    </script>
+
+</body>
+
+</html>

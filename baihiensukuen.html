@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="txtvalue" />
+    <input type="button" id="btnAdd" value="Add" />
+    <input type="button" id=" btnDisplay" value="Display" />
+    <div id="result"></div>>
+    <script>
+        let mang_so = [];
+        let btnAdd = document.getElementById('btnAdd');
+        btnAdd.addEventListener('click', function () {
+            // lấy giá trị nhâpj vào
+            let txtvalue = document.getElementById('txtvalue').value;
+            // kiểm tra chắc chắn đã lấy được value hay chưa
+            //đưa vào mảng 
+            mang_so.push(txtvalue);
+            console.log(mang_so);
+        });
+        document.getElementById('btnDisplay').addEventListener('click', function () {
+            let result = document.getElementById('resulr');
+            let p_html = '';
+            for (let i = 0, i<mang_so.length; i++) {
+                p_html = p_html + `element ${i} = ${mang_so[i]}`
+            }
+            result.innerHTML = p_html;
+        });
+    </script>
+</body>
+
+</html>
